@@ -1,5 +1,5 @@
 class ZonaDeTrabajo():
-    ZonaDeTrabajo.__codeList = []
+    _codeList = []
 
     def __init__(self, codigo: str):
         self.__codigo = ZonaDeTrabajo.__set_codigo(codigo)
@@ -10,8 +10,8 @@ class ZonaDeTrabajo():
     
     @staticmethod
     def __set_codigo(codigo: str):
-        if codigo in ZonaDeTrabajo.__codeList:
-            return ZonaDeTrabajo.__codeList.index(codigo)
+        if codigo in ZonaDeTrabajo._codeList:
+            return ZonaDeTrabajo._codeList.index(codigo)
         else:
-            ZonaDeTrabajo.__codeList.append(codigo)
-            return ZonaDeTrabajo.__codeList.index(codigo)
+            ZonaDeTrabajo._codeList.append(codigo)
+            return ZonaDeTrabajo._codeList.index(codigo)

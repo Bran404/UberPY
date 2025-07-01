@@ -4,15 +4,19 @@ from classes.ZonaDeTrabajo import ZonaDeTrabajo
 
 class Chofer():
 
-    Chofer__id = 0
+    _id = 0
     def __init__(self, auto: Auto, nombre: str, zonasDeTrabajo: list[ZonaDeTrabajo]):
-        self.ID = Chofer.__id
-        Chofer.__id += 1
+        self.__ID = Chofer._id
+        Chofer._id += 1
         self.__auto = auto
         self.__nombre = nombre
         self.__zonasDeTrabajo = zonasDeTrabajo
         self.__available = False
         self.__historial = Historial()
+
+    @property
+    def ID(self):
+        return self.__ID
 
     @property
     def auto(self):
