@@ -54,3 +54,7 @@ class Chofer():
     def aceptarViaje(self, viaje: Viaje):
         self.__historial.agregarViaje(viaje)
         self.__available = False
+
+    def enviarCodigoViaje(self, code: str):
+        "This is trashy code. Lo único que hace es devolver el code que se debería recibir desde una UI y devuelve el dato como si se tratara de un paso de fetch."
+        return code
