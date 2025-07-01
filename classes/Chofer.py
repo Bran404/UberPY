@@ -1,7 +1,11 @@
+from classes.Historial import Historial
+from classes.Auto import Auto
+from classes.ZonaDeTrabajo import ZonaDeTrabajo
+
 class Chofer():
 
     Chofer__id = 0
-    def __init__(self, auto, nombre, zonasDeTrabajo):
+    def __init__(self, auto: Auto, nombre: str, zonasDeTrabajo: list[ZonaDeTrabajo]):
         self.ID = Chofer.__id
         Chofer.__id += 1
         self.__auto = auto
