@@ -5,3 +5,5 @@ class TipoViaje(Enum):
     PREMIUM = "PREMIUM"
     ECONOMICO = "ECONOMICO"
     COMPARTIDO = "COMPARTIDO"
+
+    # FIXME: #2 Los tipos deben ser: Individual, Compartido, Programado, Comfort, Rápido
