@@ -2,15 +2,17 @@ TASK                                            STATUS                          
 
 
 
-MétodoPago (Implementa EnumMetodoPago)                LISTO                                    Brandon
+MétodoPago (Implementa EnumMetodoPago)          LISTO                                       Brandon
 
-Pasajero                                        LISTO                                   Brandon
+Pasajero                                        LISTO                                       Brandon
 
-Viaje                                           LISTO                                    Brandon
+Viaje                                           LISTO                                       Brandon
 
-EnumTipoViaje                                       LISTO                                        Brandon
+EnumTipoViaje                                   LISTO                                       Brandon
 
-Direccion                                       LISTO                                    Brandon
+Direccion                                       LISTO                                       Brandon
+
+Reorganizar Diagramas de secuencia              PENDIENTE                                   N/A
 
 Revisar qué métodos ya fueron desarrollados y
-    cuáles todavía faltan desde secuencia.      PENDIENTE                                    N/A
+    cuáles todavía faltan desde secuencia.      PENDIENTE                                   N/A
