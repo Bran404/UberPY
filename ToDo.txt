@@ -1,10 +1,4 @@
-TASK                                         STATUS                                     Assigned To
-
-
-
-
-
-
+TASK                                            STATUS                                     Assigned To
 
 
 
