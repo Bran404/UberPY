@@ -6,7 +6,7 @@ MétodoPago (Implementa EnumMetodoPago)                LISTO                    
 
 Pasajero                                        LISTO                                   Brandon
 
-Viaje                                           EN PROCESO                                    Brandon
+Viaje                                           LISTO                                    Brandon
 
 EnumTipoViaje                                       LISTO                                        Brandon
 
