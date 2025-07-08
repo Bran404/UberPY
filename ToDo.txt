@@ -4,11 +4,11 @@ TASK                                            STATUS                          
 
 MétodoPago (Implementa TipoPago)                PENDIENTE                                    N/A
 
-Pasajero                                        PENDIENTE                                    N/A
+Pasajero                                        EN PROCESO                                   Brandon
 
 Viaje                                           PENDIENTE                                    N/A
 
-EnumViaje                                       PENDIENTE                                    N/A
+EnumViaje                                       LISTO                                        Brandon
 
 Direccion                                       PENDIENTE                                    N/A
 
