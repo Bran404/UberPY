@@ -1,0 +1,22 @@
+TASK                                         STATUS                                     Assigned To
+
+
+
+
+
+
+
+
+
+MétodoPago (Implementa TipoPago)                PENDIENTE                                    N/A
+
+Pasajero                                        PENDIENTE                                    N/A
+
+Viaje                                           PENDIENTE                                    N/A
+
+EnumViaje                                       PENDIENTE                                    N/A
+
+Direccion                                       PENDIENTE                                    N/A
+
+Revisar qué métodos ya fueron desarrollados y
+    cuáles todavía faltan desde secuencia.      PENDIENTE                                    N/A
