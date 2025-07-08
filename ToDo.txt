@@ -2,15 +2,15 @@ TASK                                            STATUS                          
 
 
 
-MétodoPago (Implementa TipoPago)                PENDIENTE                                    N/A
+MétodoPago (Implementa EnumMetodoPago)                LISTO                                    Brandon
 
-Pasajero                                        EN PROCESO                                   Brandon
+Pasajero                                        LISTO                                   Brandon
 
-Viaje                                           PENDIENTE                                    N/A
+Viaje                                           EN PROCESO                                    Brandon
 
-EnumViaje                                       LISTO                                        Brandon
+EnumTipoViaje                                       LISTO                                        Brandon
 
-Direccion                                       PENDIENTE                                    N/A
+Direccion                                       LISTO                                    Brandon
 
 Revisar qué métodos ya fueron desarrollados y
     cuáles todavía faltan desde secuencia.      PENDIENTE                                    N/A

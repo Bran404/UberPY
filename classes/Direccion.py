@@ -1,4 +1,4 @@
-from Pasajero import Pasajero
+import Pasajero
 
 class Direccion():
     def __init__(self, calle, persona:Pasajero):
@@ -15,4 +15,4 @@ class Direccion():
             raise ValueError("La calle no puede estar vacía")
 
     def getPersona(self):
-        return self._persona
+        return self.persona
