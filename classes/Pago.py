@@ -1,10 +1,10 @@
-import EstadoPago
+import EnumEstadoPago
 import TipoViaje
 
 class Pago:
     def __init__(self, metodoDePago, tipoViaje,subtotal):
         self.metodoDePago = metodoDePago
-        self.estadoPago = EstadoPago.EstadoPago.PENDIENTE
+        self.estadoPago = EnumEstadoPago.EstadoPago.PENDIENTE
         self.tipoViaje = TipoViaje.TipoViaje(tipoViaje)
         self.subtotal = subtotal
 
