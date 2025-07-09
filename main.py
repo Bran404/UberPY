@@ -1,4 +1,4 @@
-from classes import *   # Import all classes
+from classes import *   # Import required-Only classes
 
 # Resources initialization
 pass
