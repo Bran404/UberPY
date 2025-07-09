@@ -1,8 +1,8 @@
-from EnumMetodoPago import MetodoPago
+from EnumMetodoPago import MetodoPago as Values
 
 class MetodoPago:
     def __init__(self, metodoPago: MetodoPago):
-        if metodoPago not in MetodoPago:
+        if metodoPago not in Values:
             raise ValueError(f"Metodo de pago no válido: {metodoPago}")
         self.metodoPago = metodoPago
 
