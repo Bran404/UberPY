@@ -110,6 +110,8 @@ def main():
         print("\n")
         print("Viaje finalizado")
         print(f"Total del viaje: ${total}")
+        viaje.setEstadoViaje(EstadoPago.PAGADO.value)  # Cambia el estado del viaje a PAGADO
+        print(f"Estado del viaje: {viaje.estadoViaje}") # Vista del pasajero
         opcionCalificar = input("Desea calificar el viaje? (s/n): ").lower() # Vista del pasajero
         if opcionCalificar == 's':
             # Calificación del viaje

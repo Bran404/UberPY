@@ -12,6 +12,7 @@ class Viaje:
         self.calificacion = None
         self.total = None
         self.codigoViaje = None
+        self.estadoViaje = pago.getEstadoPago()
 
     def setCalificacionViaje(self, calificacion):
         if (calificacion < 0 or calificacion > 5):
@@ -51,3 +52,7 @@ class Viaje:
     def generarCodigoViaje(self, longitud=4):
         self.codigoViaje = ''.join(random.choices('0123456789', k=longitud))
         return self.codigoViaje
+    
+    def setEstadoViaje(self, estado):
+        self.estadoViaje = estado
+        return self.estadoViaje
