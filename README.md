@@ -22,4 +22,8 @@ Este ejemplo muestra cómo crear un chofer, pasajeros, seleccionar tipo de viaje
 - **EnumEstadoPago, EnumMetodoPago, EnumTipoViaje**: Enumeraciones para estados, métodos y tipos de viaje.
 
 ## Autores
-Integrantes: Ayaviri Brandon<br>Balella Franco<br>Gomez Fabio<br>Muñoz Lucas<br>Soto Eduardo 
+ - Ayaviri Brandon<br>
+ - Balella Franco<br>
+ - Gomez Fabio<br>
+ - Muñoz Lucas<br>
+ - Soto Eduardo 
