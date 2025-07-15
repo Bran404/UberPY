@@ -1,6 +1,6 @@
 import tkinter as tk
 
-class UberFront(tk.Tk):
+class Ui(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Uber - Frontend")
@@ -31,5 +31,5 @@ class UberFront(tk.Tk):
 
 # Iniciar la interfaz
 if __name__ == "__main__":
-    app = UberFront()
+    app = Ui()
     app.mainloop()
