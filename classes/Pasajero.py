@@ -1,22 +1,31 @@
 from classes.Direccion import Direccion
+from EnumMetodoPago import MetodoPago
 
 class Pasajero:
-    def __init__(self, nombre):
-        self.nombre=nombre
-        self.direcciones=[]
+    def __init__(self, nombre, metodoDePago: MetodoPago=MetodoPago.EFECTIVO):
+        self.__nombre=nombre
+        self.__direcciones=[]
+        self.__metodoDePago=metodoDePago
 
-    def getNombre(self):
-        return self.nombre
+    @property
+    def nombre(self):
+        return self.__nombre
 
-    def setNombre(self, nombreNuevo):
-        self.nombre=nombreNuevo
+    @property
+    def metodoDePago(self):
+        return self.__metodoDePago
 
+    @metodoDePago.setter
+    def nombre(self, nombreNuevo):
+        self.__nombre=nombreNuevo
+
+    @property
+    def direcciones(self):
+        return self.__direcciones
+
+    @direcciones.setter
     def agregarDireccion(self, direccionNueva: Direccion):
         if isinstance(direccionNueva, Direccion):
-            self.direcciones.append(direccionNueva)
+            self.__direcciones.append(direccionNueva)
         else:
             raise ValueError("Dirección no válida")
-
-    def getDirecciones(self):
-        for direccion in self.direcciones:
-            print(direccion.getCalle())

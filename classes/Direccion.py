@@ -1,16 +1,26 @@
 class Direccion():
-    def __init__(self, origen,destino):
-        self.origen=origen
-        self.destino = destino
+    def __init__(self, calle:str, altura:int):
+        self.__calle=calle
+        self.__altura=str(altura)
 
-    def getOrigen(self):
-        return self.origen
+    @property
+    def calle(self):
+        return self.__calle
 
-    def setOrigen(self, nueva_origen):
-        if nueva_origen:
-            self._calle = nueva_origen
+    @calle.setter
+    def calle(self, nueva_calle:str):
+        if nueva_calle.strip():
+            self.__calle = nueva_calle.strip()
         else:
             raise ValueError("La calle no puede estar vacía")
-        
-    def getDestino(self):
-        return self.destino
+
+    @property
+    def altura(self):
+        return self.__altura
+
+    @altura.setter    
+    def altura(self, nueva_altura:int):
+        if nueva_altura is isinstance(int) and nueva_altura > 0:
+            self.__altura = str(nueva_altura)
+        else:
+            raise ValueError("La altura no puede estar vacía")
