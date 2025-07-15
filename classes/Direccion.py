@@ -1,18 +1,16 @@
-import Pasajero
-
 class Direccion():
-    def __init__(self, calle, persona:Pasajero):
-        self.persona=persona
-        self.calle=calle
+    def __init__(self, origen,destino):
+        self.origen=origen
+        self.destino = destino
 
-    def getCalle(self):
-        return self._calle
+    def getOrigen(self):
+        return self.origen
 
-    def setCalle(self, nueva_calle):
-        if nueva_calle:
-            self._calle = nueva_calle
+    def setOrigen(self, nueva_origen):
+        if nueva_origen:
+            self._calle = nueva_origen
         else:
             raise ValueError("La calle no puede estar vacía")
-
-    def getPersona(self):
-        return self.persona
+        
+    def getDestino(self):
+        return self.destino

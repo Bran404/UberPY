@@ -1,10 +1,13 @@
-from EnumTipoViaje import TipoViaje
+from classes.EnumTipoViaje import TipoViaje as Values
 
 class TipoViaje:
-    def __init__(self, tipoViaje: TipoViaje):
-        if tipoViaje not in TipoViaje:
-            raise ValueError(f"Tipo de viaje no válido: {tipoViaje}")
+    def __init__(self, tipoViaje: Values):
+        if tipoViaje not in Values:
+            raise ValueError("Tipo de viaje no válido.")
         self.tipoViaje = tipoViaje
 
-    def setTipoViaje(self, tipoViaje: TipoViaje):
+    def getTipoViaje(self):
+        return self.tipoViaje
+
+    def setTipoViaje(self, tipoViaje: Values):
         self.tipoViaje = tipoViaje
