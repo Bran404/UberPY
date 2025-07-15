@@ -19,12 +19,12 @@ class Pago:
     
     def calcularTotal(self, pasajeros):
         tipo = self.tipoViaje.getTipoViaje()
-        print(f"Calculando total para {len(pasajeros)} pasajeros")
-        print(f"Calculando total para un viaje {tipo}")
+        print(f"- Calculando total para {len(pasajeros)} pasajeros")
+        print(f"- Calculando total para un viaje {tipo}")
         if tipo == TipoViaje.Individual.value:
             total = self.subtotal
         elif tipo == TipoViaje.Compartido.value:
-            print(f"Cantidad de pasajeros: {len(pasajeros)}")
+            print(f"- Cantidad de pasajeros: {len(pasajeros)}")
             total = self.subtotal / len(pasajeros)
         elif tipo == TipoViaje.Programado.value:
             total = self.subtotal * 0.8

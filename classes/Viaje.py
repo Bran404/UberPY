@@ -14,7 +14,7 @@ class Viaje:
         self.codigoViaje = None
 
     def setCalificacionViaje(self, calificacion):
-        if (calificacion <= 0 or calificacion >= 5):
+        if (calificacion < 0 or calificacion > 5):
             raise ValueError("La calificación debe estar entre 0 y 5")
         self.calificacion = calificacion 
         return self.calificacion
@@ -30,7 +30,7 @@ class Viaje:
 
     def seguimientoViaje(self):
         #Generacion de mensaje de seguimiento
-        print("Seguimiento del viaje:")
+        print("\nSeguimiento del viaje:")
         print(f"Tipo de viaje: {self.tipoDeViaje}")
         if not self.chofer:
             print("No hay chofer asignado al viaje.")

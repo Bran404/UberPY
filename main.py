@@ -22,6 +22,7 @@ def main():
     print("Formulario de viaje")
     #Selecciona un destino
     print("\nSeleccion de destino:")
+    # Ejemplo de ubicacion actual GPS
     origen = "Los pozos"
     print(f"Ubicacion actual: {origen}")
     destino = input("Ingrese el destino del viaje: ")
@@ -73,29 +74,40 @@ def main():
         except ValueError as e:
             print(f"Error: {e}")
 
+    print("\n")
     # Crea el pago - Procesa Pago
     pago = Pago(metodoDePago, tipoViaje)
-    totalPago = pago.calcularTotal(pasajeros)
 
     # Crea el viaje - Pasajero confirma el viaje
     viaje = Viaje(pasajeros, pago)
     print("Buscando choferes disponibles...")
-    # Asignar chofer al viaje
+
+    time.sleep(3)  # Simula la búsqueda de choferes
+
+    # Chofer acepta el viaje
     chofer.aceptarViaje(viaje)
     print(f"Chofer {chofer.nombre} ha aceptado el viaje.")
+
+    # APP asigna chofer al viaje
     viaje.asignarChofer(chofer)
+    
     viaje.generarCodigoViaje()
     print(f"Código de viaje generado: {viaje.codigoViaje}") # Vista del pasajero
+
     # Seguimiento del viaje
     viaje.seguimientoViaje()
-    # Simula el tiempo de chofer a pasajero
-    time.sleep(3)  
-    print("El chofer ha llegado al punto de encuentro.")
-    codigo = input("Ingrese el código de viaje para confirmar: ") # Vista del chofer 
+
+    time.sleep(6) # Simula el tiempo de chofer a pasajero
+
+    print("\nEl chofer ha llegado al punto de encuentro.")
+    codigo = input("Ingrese el código de viaje para empezar el viaje: ") # Vista del chofer 
     if codigo == viaje.codigoViaje:
         print("Código de viaje confirmado. El viaje ha comenzado.")
+        time.sleep(4) # Simula el tiempo del viaje
         # Calcular el total del viaje
         total = viaje.calcularViaje()
+        
+        print("\n")
         print("Viaje finalizado")
         print(f"Total del viaje: ${total}")
         opcionCalificar = input("Desea calificar el viaje? (s/n): ").lower() # Vista del pasajero
@@ -105,24 +117,15 @@ def main():
                 try:
                     calificacion = input("Ingrese la calificación del viaje (0 a 5): ")
                     viaje.setCalificacionViaje(int(calificacion))
+                    print(f"Calificación del viaje: {viaje.calificacion}")
+                    print("Gracias por calificar el viaje.")
                     break
                 except ValueError as e:
                     print(f"Error: {e}")
+        else:
+            print("Gracias por usar UberPY. ¡Hasta luego!")
     else:
         print("Código de viaje incorrecto. El viaje no puede comenzar.")
-
-
-
-    
-
-    
-
-
-
-
-
-
-
 
 # Execution
 if __name__ == '__main__':
