@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "title":"Back and Front",
+        "description":"Particionar el sistema em backend y frontend",
+        "status":"Pending",
+        "assignedTo": null
+    },
+    {
+        "id":2,
+        "title":"UI",
+        "description":"Desarrollar una UI que haga de Front con interacción del usuario",
+        "status":"Pending",
+        "assignedTo": null
+    },
+    {
+        "id":3,
+        "title":"Controllers",
+        "description":"Desarrollar los controladores para el backend. Esto implica diferentes carpetas por controlador, con acceso a diferentes módulos que hacen de modelos.",
+        "status":"Pending",
+        "assignedTo": null
+    }
+]
