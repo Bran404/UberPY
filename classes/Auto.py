@@ -3,6 +3,8 @@ class Auto():
         self.__marca = marca
         self.__modelo = modelo
 
+        print(f"Auto creado: {self.__marca} {self.__modelo}")
+
     @property
     def marca(self):
         return self.__marca
