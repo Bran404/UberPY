@@ -3,6 +3,8 @@ class Direccion():
         self.__calle=calle
         self.__altura=str(altura)
 
+        print(f"Dirección creada: {self.__calle} {self.__altura}")
+
     @property
     def calle(self):
         return self.__calle
@@ -23,4 +25,4 @@ class Direccion():
         if nueva_altura is isinstance(int) and nueva_altura > 0:
             self.__altura = str(nueva_altura)
         else:
-            raise ValueError("La altura no puede estar vacía")
+            raise ValueError("La altura debe ser un entero positivo")
