@@ -13,12 +13,13 @@ class Viaje:
         self.__ID = str(Viaje.__id).zfill(5)
         Viaje.__id += 1
         self.__pasajeros = pasajeros
-        self.__chofer
+        self.__chofer = None
         self.__tipoDeViaje = tipoDeViaje or self.pasajeros[0].getTipoViaje()
         self.__comienzo = inicio
         self.__destinacion = fin
-        self.__pago = Pago(self.pasajeros[0].getMetodoPago(), self.tipoDeViaje, self.calcularViaje())
-        self.__calificacion
+        self.__pago = Pago(self.pasajeros[0].metodoDePago, self.tipoDeViaje)
+        self.__pago.calcularTotal(len(self.__pasajeros))
+        self.__calificacion = 5     # Si no se califica, se asume que es porque no hubo críticas.
         self.__estadoViaje = EstadoViaje.SIN_CHOFER
         self.generarCodigoViaje()
     
@@ -63,7 +64,7 @@ class Viaje:
 
     @calificacion.setter
     def calificacion(self, calificacion:int)->None:
-        if (calificacion <= 0 or calificacion >= 5) or (calificacion.is_integer() == False):
+        if (calificacion <= 0 or calificacion >= 5) or not isinstance(calificacion, int):
             raise ValueError("La calificación debe estar entre 0 y 5")
         self.__calificacion = calificacion
 
@@ -75,6 +76,10 @@ class Viaje:
     def estadoViaje(self, estadoViaje:EstadoViaje)->None:
         if estadoViaje in EstadoViaje:
             self.__estadoViaje = estadoViaje
+
+    @property
+    def codigoViaje(self)->str:
+        return self.__codigoViaje
 
     def cancelarViaje(self):        #FIXME: No se debe borrar la información del viaje. Se debe establecerlo como cancelado
         # self.pasajeros = []
@@ -89,16 +94,12 @@ class Viaje:
     def seguimientoViaje(self)->None:
         #Generacion de mensaje de seguimiento
         print("\nSeguimiento del viaje:")
-        print(f"Tipo de viaje: {self.tipoDeViaje}")
+        print(f"Tipo de viaje: {self.tipoDeViaje.value}")
         if not self.chofer:
             print("No hay chofer asignado al viaje.")
             return
         print(f"Viaje asignado a {self.chofer.nombre} con auto {self.chofer.auto.marca} {self.chofer.auto.modelo}.")
         print(f"Cantidad de pasajeros: {len(self.pasajeros)}")
-
-    def calcularViaje(self)->int|float:
-        self.__pago.subtotal = self.__pago.calcularTotal(len(self.pasajeros))
-        return self.__pago.subtotal
     
     def asignarChofer(self, chofer: Chofer):
         if self.__chofer is not None:
@@ -109,4 +110,5 @@ class Viaje:
     
     def generarCodigoViaje(self, longitud:int=4)->str:
         self.__codigoViaje = ''.join(random.choices('0123456789', k=longitud))
-        return self.__codigoViaje
+
+        print(f"Se ha creado el código {self.__codigoViaje} para viaje {self.__ID}.")

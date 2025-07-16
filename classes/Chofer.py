@@ -1,7 +1,6 @@
 from classes.Historial import Historial
 from classes.Auto import Auto
 from classes.ZonaDeTrabajo import ZonaDeTrabajo
-from classes.Viaje import Viaje
 
 class Chofer():
 
@@ -70,7 +69,7 @@ class Chofer():
         else:
             print(f"Chofer {self.__ID} no disponible.")
 
-    def aceptarViaje(self, viaje: Viaje):
+    def aceptarViaje(self, viaje):
         if not self.__available:
             raise ValueError("El chofer no esta disponible")
         self.__historial.agregarViaje(viaje)

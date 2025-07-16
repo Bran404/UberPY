@@ -9,7 +9,7 @@ class Pago:
         self.__metodoDePago = metodoDePago
         self.__estadoPago = EstadoPago.PENDIENTE
         self.__tipoViaje = tipoViaje
-        self.__subtotal = subtotal # Valor de ejemplo, logicamente el valor deberia de ser calculando la distancia del viaje
+        self.__total = subtotal # Valor de ejemplo, logicamente el valor deberia de ser calculando la distancia del viaje
 
     @property
     def metodoDePago(self):
@@ -29,23 +29,27 @@ class Pago:
     @property
     def tipoViaje(self):
         return self.__tipoViaje
+
+    @property
+    def total(self)->int|float:
+        return self.__total
     
     def calcularTotal(self, cant_pasajeros:int)->int|float:
 
         print(f"Calculando total...")
-        print(f"Precio base: {self.__subtotal}")
+        print(f"Precio base: {self.__total}")
         match self.__tipoViaje:
-            case TipoViaje.Individual:
-                return self.__subtotal
-            case TipoViaje.Compartido:
-                self.__subtotal = self.__subtotal / cant_pasajeros
-            case TipoViaje.Programado:
-                self.__subtotal = self.__subtotal * 0.8
-            case TipoViaje.Comfort:
-                self.__subtotal = self.__subtotal * 2.0
-            case TipoViaje.Rapido:
-                self.__subtotal = self.__subtotal * 1.2
+            case TipoViaje.INDIVIDUAL:
+                return self.__total
+            case TipoViaje.COMPARTIDO:
+                self.__total = self.__total / cant_pasajeros
+            case TipoViaje.PROGRAMADO:
+                self.__total = self.__total * 0.8
+            case TipoViaje.COMFORT:
+                self.__total = self.__total * 2.0
+            case TipoViaje.RAPIDO:
+                self.__total = self.__total * 1.2
         
-        print(f"Total calculado: {self.__subtotal}")
+        print(f"Total calculado: {self.__total}")
         
-        return self.__subtotal
+        return self.__total

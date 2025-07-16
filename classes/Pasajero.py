@@ -1,5 +1,5 @@
 from classes.Direccion import Direccion
-from EnumMetodoPago import MetodoPago
+from classes.EnumMetodoPago import MetodoPago
 
 class Pasajero:
 
@@ -21,13 +21,19 @@ class Pasajero:
     def nombre(self)->str:
         return self.__nombre
 
+    @nombre.setter
+    def nombre(self, nombreNuevo:str)->None:
+        self.__nombre=nombreNuevo
+
     @property
     def metodoDePago(self)->MetodoPago:
         return self.__metodoDePago
 
     @metodoDePago.setter
-    def nombre(self, nombreNuevo:str)->None:
-        self.__nombre=nombreNuevo
+    def metodoDePago(self, MetodoDePago:MetodoPago)->None:
+        if MetodoDePago not in MetodoPago:
+            raise ValueError("Método de pago no válido")
+        self.__metodoDePago = MetodoDePago
 
     @property
     def direcciones(self)->list[Direccion]:
