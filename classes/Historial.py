@@ -13,5 +13,7 @@ class Historial():
         "Fetch the Viaje at the given index"
         return self.__viajes[index]
 
-    def agregarViaje(self, viaje:Viaje):
+    def agregarViaje(self, viaje:Viaje)->None:
         self.__viajes.append(viaje)
+
+        print(f"Viaje {viaje.ID} agregado al historial.")
