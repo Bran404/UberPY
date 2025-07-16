@@ -1,7 +1,7 @@
 from enum import Enum
 
 class EstadoPago(Enum):
-    PAGADO = "PAGADO"
-    EN_PROCESO = "EN_PROCESO"
-    PENDIENTE = "PENDIENTE"
-    DENEGADO = "DENEGADO"
+    PAGADO = "Pagado"
+    EN_PROCESO = "En proceso"
+    PENDIENTE = "Pendiente"
+    DENEGADO = "Denegado"

@@ -1,7 +1,6 @@
 from classes.Historial import Historial
 from classes.Auto import Auto
 from classes.ZonaDeTrabajo import ZonaDeTrabajo
-from classes.Viaje import Viaje #TODO: Crear la clase Viaje
 
 class Chofer():
 
@@ -41,7 +40,8 @@ class Chofer():
 
     @property
     def historial(self):
-        return self.__historial
+        for viaje in self.__historial.viajes:
+            print(f"Total: {viaje.total}")
     
     @property
     def available(self):
@@ -51,7 +51,7 @@ class Chofer():
     def available(self):
         self.__available = not self.__available
 
-    def aceptarViaje(self, viaje: Viaje):
+    def aceptarViaje(self, viaje):
         self.__historial.agregarViaje(viaje)
         self.__available = False
 

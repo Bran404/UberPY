@@ -1,4 +1,4 @@
-import Direccion
+from classes.Direccion import Direccion
 
 class Pasajero:
     def __init__(self, nombre):
