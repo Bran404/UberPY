@@ -1,0 +1,5 @@
+ToDo.json merge=ours
+# Atención equipo de desarrollo:
+# Asegurándose de que estén en este directorio, ejecuten `git config merge.ours.driver true`
+# Esto es para que puedan trabajar con los ToDo's de branches sin tener que andar con cuidado en el merge.
+# Si no hacen esto, no pasa nada, pero el comando no comentado no funka porque git por defecto ignora esto.
