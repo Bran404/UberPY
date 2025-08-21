@@ -1,7 +1,13 @@
-from enum import Enum
+from classes.EnumTipoViaje import TipoViaje as Values
 
-class TipoViaje(Enum):
-    NORMAL = "NORMAL"
-    PREMIUM = "PREMIUM"
-    ECONOMICO = "ECONOMICO"
-    COMPARTIDO = "COMPARTIDO"
+class TipoViaje:
+    def __init__(self, tipoViaje: Values):
+        if tipoViaje not in Values:
+            raise ValueError("Tipo de viaje no válido.")
+        self.tipoViaje = tipoViaje
+
+    def getTipoViaje(self):
+        return self.tipoViaje
+
+    def setTipoViaje(self, tipoViaje: Values):
+        self.tipoViaje = tipoViaje

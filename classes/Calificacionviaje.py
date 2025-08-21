@@ -3,7 +3,7 @@ class Calificarviaje:
         self.pasajero = pasajero
         self.conductor = conductor
         self.calificacion_conductor = None #Sera de 1 a 5 estrellas
-        self.comentario = none 
+        self.comentario = None 
 
     def set_calificacion_conductor(self, estrellas):
         if isinstance(estrellas, int) and 1 <= estrellas <= 5:
