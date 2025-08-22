@@ -10,8 +10,8 @@
         "id": 2,
         "title": "UI",
         "description": "Desarrollar una UI que haga de Front con interacción del usuario",
-        "status": "Pending",
-        "assignedTo": null
+        "status": "In process",
+        "assignedTo": "Estudiantel"
     },
     {
         "id": 3,
