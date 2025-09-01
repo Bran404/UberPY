@@ -1,22 +1,48 @@
 from classes.Direccion import Direccion
+from classes.EnumMetodoPago import MetodoPago
 
 class Pasajero:
-    def __init__(self, nombre):
-        self.nombre=nombre
-        self.direcciones=[]
 
-    def getNombre(self):
-        return self.nombre
+    _id = 1
+    def __init__(self, nombre, metodoDePago: MetodoPago=MetodoPago.EFECTIVO):
+        self.__ID = str(Pasajero._id).zfill(5)
+        Pasajero._id += 1
+        self.__nombre=nombre
+        self.__direcciones:list[Direccion]=[]
+        self.__metodoDePago=metodoDePago
 
-    def setNombre(self, nombreNuevo):
-        self.nombre=nombreNuevo
+        print(f"Pasajero creado: {self.__nombre} ({self.__ID}).")
+    
+    @property
+    def ID(self)->str:
+        return self.__ID
 
-    def agregarDireccion(self, direccionNueva: Direccion):
+    @property
+    def nombre(self)->str:
+        return self.__nombre
+
+    @nombre.setter
+    def nombre(self, nombreNuevo:str)->None:
+        self.__nombre=nombreNuevo
+
+    @property
+    def metodoDePago(self)->MetodoPago:
+        return self.__metodoDePago
+
+    @metodoDePago.setter
+    def metodoDePago(self, MetodoDePago:MetodoPago)->None:
+        if MetodoDePago not in MetodoPago:
+            raise ValueError("Método de pago no válido")
+        self.__metodoDePago = MetodoDePago
+
+    @property
+    def direcciones(self)->list[Direccion]:
+        return self.__direcciones
+
+    def agregarDireccion(self, direccionNueva: Direccion)->None:
         if isinstance(direccionNueva, Direccion):
-            self.direcciones.append(direccionNueva)
+            self.__direcciones.append(direccionNueva)
+
+            print(f"Dirección agregada: {direccionNueva.calle} {direccionNueva.altura} a pasajero {self.__ID}.")
         else:
             raise ValueError("Dirección no válida")
-
-    def getDirecciones(self):
-        for direccion in self.direcciones:
-            print(direccion.getCalle())
